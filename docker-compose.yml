@@ -26,3 +26,4 @@ services:
       - "4000:80"
     volumes:
       - "./src:/var/www/html"    #Montar volumen de htdoc para crear persistencia
+      - "./php.ini:/usr/local/etc/php/conf.d/docker-php-ext-sodium.ini"
