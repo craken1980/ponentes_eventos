@@ -1,4 +1,5 @@
 <?php
+    require __DIR__."/../libs/MySQL.php";
     class LoginModel {
         private $username="";
         private $password="";
@@ -22,10 +23,8 @@
             $this->password = $password;
         }
 
-        public static function CheckLogin(LoginModel $login): bool{
-            $username = $login->getUsername();
-            $password = $login->getPassword();
-            $query = "SELECT Id_usuario FROM Usuarios WHERE Username = '$username' AND Password = '$password'";
+        public static function CheckLogin($username, $password): bool{
+            $query = "SELECT * FROM Usuarios WHERE Username = '$username' AND Password = '$password'";
             $dbconn = new MySQLdb();
             $data = $dbconn->query($query);
             return count($data) > 0;

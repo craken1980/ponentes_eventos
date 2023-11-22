@@ -61,6 +61,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.error{
+    color: red;
+    font-size: 12px;
+  }
+
 .background{
     background-image: url('/assets/loginbg.jpg');
     background-position: center;
